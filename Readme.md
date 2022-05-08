@@ -2,7 +2,7 @@
 
 <br/>
 
-![Full Stack Development with Spring Boot and React](/img/Full-Stack-Development-with-Spring-Boot.png 'Full Stack Development with Spring Boot and React'){: .center-image }
+![Full Stack Development with Spring Boot and React](/img/Full-Stack-Development-with-Spring-Boot.png 'Full Stack Development with Spring Boot and React')
 
 <br/>
 
@@ -11,6 +11,34 @@ https://github.com/PacktPublishing/Full-Stack-Development-with-Spring-Boot-and-R
 
 
 <br/>
+
+```
+$ java -version
+java version "17.0.2" 2022-01-18 LTS
+```
+
+<br/>
+
+
+```
+$ mvn -v
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+```
+
+<br/>
+
+```
+$ sudo apt update -y
+$ sudo apt install -y mysql-client
+```
+
+<br/>
+
+```
+// Start MySQL Server
+$ docker-compose up
+```
+
 
 
 <br/>

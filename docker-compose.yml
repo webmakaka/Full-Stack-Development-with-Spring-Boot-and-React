@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql-dev:
+    restart: always
+    image: mysql:8.0
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql:/etc/mysql/conf.d
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_ROOT_PASSWORD: pA55w0rd123
