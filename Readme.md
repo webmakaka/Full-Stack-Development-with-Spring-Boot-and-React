@@ -35,10 +35,22 @@ $ sudo apt install -y mysql-client
 <br/>
 
 ```
+// MariaDB replaced on MySQL
 // Start MySQL Server
 $ docker-compose up
 ```
 
+<br/>
+
+```
+$ cd apps/backend
+```
+
+<br/>
+
+```
+$ ./mvnw spring-boot:run
+```
 
 
 <br/>
