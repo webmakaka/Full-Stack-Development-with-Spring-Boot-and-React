@@ -42,20 +42,7 @@ $ docker-compose up
 
 <br/>
 
-```
-$ cd apps/backend
-```
-
-<br/>
-
-```
-$ ./mvnw spring-boot:run
-```
-
-
-<br/>
-
-### [Development](./docs/Development.md)
+### [Development](./docs/00-Development.md)
 
 <br/><br/>
 

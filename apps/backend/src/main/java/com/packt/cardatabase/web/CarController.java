@@ -9,11 +9,11 @@ import com.packt.cardatabase.domain.CarRepository;
 
 @RestController
 public class CarController {
-    @Autowired
-    private CarRepository repository;
+	@Autowired
+	private CarRepository repository;
 
-    @RequestMapping("/cars")
-    public Iterable<Car> getCars() {
-        return repository.findAll();
-    }
+	@RequestMapping("/cars")
+	public Iterable<Car> getCars() {
+		return repository.findAll();
+	}
 }
