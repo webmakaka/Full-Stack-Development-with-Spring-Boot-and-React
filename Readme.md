@@ -2,7 +2,10 @@
 
 <br/>
 
-![Full Stack Development with Spring Boot and React](/img/Full-Stack-Development-with-Spring-Boot.png 'Full Stack Development with Spring Boot and React')
+<p align="center">
+  <img src="https://raw.githubusercontent.com/webmakaka/Full-Stack-Development-with-Spring-Boot-and-React/master/img/Full-Stack-Development-with-Spring-Boot.png" alt="Full Stack Development with Spring Boot and React"/>
+</p>
+
 
 <br/>
 
