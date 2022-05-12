@@ -59,6 +59,27 @@ $ npm run start
 
 ## 12. Styling the Frontend with React MUI
 
+
+<br/>
+
+## 12. Styling the Frontend with React MUI
+
+
+<br/>
+
+## 13. Testing Your Frontend
+
+
+```
+$ npm install
+$ npm run test
+```
+
+<br/>
+
+![Application](/img/ch13-pic01.png?raw=true)
+
+
 <br/><br/>
 
 ---
