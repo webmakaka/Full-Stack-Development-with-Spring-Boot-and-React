@@ -2,12 +2,34 @@
 
 <br/>
 
-### [Part 1: Backend Programming with Spring Boot](/docs/01-Backend.md)
+# Part 2: Frontend Programming with React
 
-### [Part 2: Frontend Programming with React](/docs/02-Frontend.md)
+<br/>
 
-### [Part 3: Full Stack Development](/docs/03-FullStack.md)
+## 06. Setting Up the Environment and Tools – Frontend
 
+<br/>
+
+
+## 07. Getting Started with React
+
+
+<br/>
+
+
+## 07. Getting Started with React
+
+
+<br/>
+
+
+## 08. Consuming the REST API with React
+
+
+<br/>
+
+
+## 09. Useful Third-Party Components for React
 
 <br/><br/>
 

@@ -42,7 +42,7 @@ $ docker-compose up
 
 <br/>
 
-### [Development](./docs/00-Development.md)
+### [Development](/docs/00-Development.md)
 
 <br/><br/>
 

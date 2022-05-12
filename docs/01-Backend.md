@@ -124,7 +124,6 @@ $ curl \
 **response:**
 
 ```
-// GET ALL CARS
 {
   "_embedded": {
     "cars": [
