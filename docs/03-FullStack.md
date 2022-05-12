@@ -69,6 +69,8 @@ $ npm run start
 
 ## 13. Testing Your Frontend
 
+<br/>
+
 
 ```
 $ npm install
@@ -78,6 +80,25 @@ $ npm run test
 <br/>
 
 ![Application](/img/ch13-pic01.png?raw=true)
+
+
+<br/>
+
+## 14. Securing Your Application
+
+```
+$ npm install
+$ npm run start
+```
+
+<br/>
+
+![Application](/img/ch14-pic01.png?raw=true)
+
+
+<br/>
+
+![Application](/img/ch14-pic02.png?raw=true)
 
 
 <br/><br/>

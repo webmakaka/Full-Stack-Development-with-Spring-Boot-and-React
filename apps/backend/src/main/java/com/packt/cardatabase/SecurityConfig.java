@@ -35,19 +35,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.csrf().disable().cors().and()
-				.authorizeRequests().anyRequest().permitAll();
-
 //		http.csrf().disable().cors().and()
-//		.sessionManagement()
-//		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-//		.authorizeRequests()
-//		.antMatchers(HttpMethod.POST, "/login").permitAll()
-//		.anyRequest().authenticated().and()
-//		.exceptionHandling()
-//		.authenticationEntryPoint(exceptionHandler).and()
-//		.addFilterBefore(authenticationFilter,
-//				UsernamePasswordAuthenticationFilter.class);
+//				.authorizeRequests().anyRequest().permitAll();
+
+		http.csrf().disable().cors().and()
+		.sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+		.authorizeRequests()
+		.antMatchers(HttpMethod.POST, "/login").permitAll()
+		.anyRequest().authenticated().and()
+		.exceptionHandling()
+		.authenticationEntryPoint(exceptionHandler).and()
+		.addFilterBefore(authenticationFilter,
+				UsernamePasswordAuthenticationFilter.class);
 	}	
 
 	@Bean

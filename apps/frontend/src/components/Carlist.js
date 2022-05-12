@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { SERVER_URL } from '../constants.js'
-import { DataGrid, GridToolbarContainer, GridToolbarExport, gridClasses } from '@mui/x-data-grid';
+import { 
+  DataGrid, 
+  GridToolbarContainer, 
+  GridToolbarExport, 
+  gridClasses } from '@mui/x-data-grid';
 import Snackbar from '@mui/material/Snackbar';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+
 import AddCar from './AddCar.js';
 import EditCar from './EditCar.js';
 
 function CustomToolbar() {
   return (
-    <GridToolbarContainer className={gridClasses.toolbarContainer}>
+    <GridToolbarContainer 
+      className={gridClasses.toolbarContainer}>
       <GridToolbarExport />
     </GridToolbarContainer>
   );
@@ -25,7 +31,13 @@ function Carlist() {
   }, []);
 
   const fetchCars = () => {
-    fetch(SERVER_URL + 'api/cars')
+    // Read the token from the session storage
+    // and include it to Authorization header 
+    const token = sessionStorage.getItem("jwt"); 
+
+    fetch(SERVER_URL + 'api/cars', {
+      headers: { 'Authorization' : token }
+    })
     .then(response => response.json())
     .then(data => setCars(data._embedded.cars))
     .catch(err => console.error(err));    
@@ -33,25 +45,57 @@ function Carlist() {
   
   const onDelClick = (url) => {
     if (window.confirm("Are you sure to delete?")) {
-      fetch(url,  {method:  'DELETE'})
-      .then(response => {
+      const token = sessionStorage.getItem("jwt"); 
+
+      fetch(url, {
+        method:  'DELETE', 
+        headers: { 'Authorization' : token }
+      })
+      .then(response => { 
         if (response.ok) {
           fetchCars();
           setOpen(true);
         }
         else {
-          alert('Something went wrong!');
-        }
+          alert('Something went wrsong!');
+        }  
       })
       .catch(err => console.error(err))
     }
   }
-  
+
   // Add a new car 
   const addCar = (car) => {
+    const token = sessionStorage.getItem("jwt"); 
+
     fetch(SERVER_URL  +  'api/cars',
       { method: 'POST', headers: {
         'Content-Type':'application/json',
+        'Authorization' : token
+      },
+      body: JSON.stringify(car)
+    })
+    .then(response => {
+      if (response.ok) {
+        fetchCars();
+      }
+      else {
+        alert('Something went wrong!');
+      }
+    })
+    .catch(err => console.error(err))
+  }
+  
+  // Update car 
+  const updateCar = (car, link) => {
+    const token = sessionStorage.getItem("jwt"); 
+
+    fetch(link,
+      { 
+        method: 'PUT', 
+        headers: {
+        'Content-Type':'application/json',
+        'Authorization' : token
       },
       body: JSON.stringify(car)
     })
@@ -66,27 +110,6 @@ function Carlist() {
     .catch(err => console.error(err))
   }
 
-  // Update existing car
-  const updateCar = (car, link) => {
-    fetch(link,
-      { 
-        method: 'PUT', 
-        headers: {
-        'Content-Type':  'application/json',
-      },
-      body: JSON.stringify(car)
-    })
-    .then(response => {
-      if (response.ok) {
-        fetchCars();
-      }
-      else {
-        alert('Something went wrong!');
-      }
-    })
-    .catch(err => console.error(err))
-  }
-   
   const columns = [
     {field: 'brand', headerName: 'Brand', width: 200},
     {field: 'model', headerName: 'Model', width: 200},
@@ -98,10 +121,11 @@ function Carlist() {
       headerName: '', 
       sortable: false,
       filterable: false,
-      renderCell: row => <EditCar 
-                            data={row} 
-                            updateCar={updateCar} />
-    },
+      renderCell: row => 
+        <EditCar 
+          data={row} 
+          updateCar={updateCar} />
+    },  
     {
       field: '_links.self.href', 
       headerName: '', 
@@ -111,7 +135,7 @@ function Carlist() {
         <IconButton onClick={() => onDelClick(row.id)}>
           <DeleteIcon color="error" />
         </IconButton>
-    }
+    }  
   ];
   
   return(
@@ -124,9 +148,8 @@ function Carlist() {
           rows={cars} 
           columns={columns} 
           disableSelectionOnClick={true}
-          getRowId={row => row._links.self.href}
           components={{ Toolbar: CustomToolbar }}
-        />
+          getRowId={row => row._links.self.href}/>
         <Snackbar
           open={open}
           autoHideDuration={2000}
@@ -136,6 +159,7 @@ function Carlist() {
       </div>
     </React.Fragment>
   );
+
 }
 
 export default Carlist;
