@@ -53,6 +53,12 @@ $ npm run start
 
 ![Application](/img/ch11-pic02.png?raw=true)
 
+
+<br/>
+
+
+## 12. Styling the Frontend with React MUI
+
 <br/><br/>
 
 ---
