@@ -101,6 +101,23 @@ $ npm run start
 ![Application](/img/ch14-pic02.png?raw=true)
 
 
+<br/>
+
+## 15. Deploying Your Application
+
+<br/>
+
+```
+$ mvn clean install
+$ java -jar target/cardatabase-0.0.1-SNAPSHOT.jar
+```
+
+<br/>
+
+**Heroku and Github : Items could not be retrieved, Internal server error**
+
+https://stackoverflow.com/questions/71892543/heroku-and-github-items-could-not-be-retrieved-internal-server-error
+
 <br/><br/>
 
 ---

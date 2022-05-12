@@ -29,7 +29,7 @@ Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 
 ```
 $ sudo apt update -y
-$ sudo apt install -y mysql-client
+$ sudo apt install -y mysql-client jq
 ```
 
 <br/>
@@ -39,6 +39,42 @@ $ sudo apt install -y mysql-client
 // Start MySQL Server
 $ docker-compose up
 ```
+
+<br/>
+
+
+```
+$ cd apps/backend
+```
+
+<br/>
+
+```
+$ chmod +x ./mvnw
+$ ./mvnw spring-boot:run
+```
+
+
+```
+$ cd apps/frontend
+```
+
+<br/>
+
+```
+$ npm install
+$ npm run start
+```
+
+<br/>
+
+![Application](/img/ch14-pic01.png?raw=true)
+
+
+<br/>
+
+![Application](/img/ch14-pic02.png?raw=true)
+
 
 <br/>
 
