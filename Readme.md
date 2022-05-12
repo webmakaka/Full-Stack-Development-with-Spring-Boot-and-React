@@ -34,11 +34,21 @@ $ sudo apt install -y mysql-client jq
 
 <br/>
 
+### How To RUN Final App:
+
+<br/>
+
+**DataBase**
+
 ```
 // MariaDB replaced on MySQL
 // Start MySQL Server
 $ docker-compose up
 ```
+
+<br/>
+
+**Backend**
 
 <br/>
 
@@ -54,6 +64,10 @@ $ chmod +x ./mvnw
 $ ./mvnw spring-boot:run
 ```
 
+<br/>
+
+**Frontend**
+
 
 ```
 $ cd apps/frontend
@@ -65,6 +79,11 @@ $ cd apps/frontend
 $ npm install
 $ npm run start
 ```
+
+<br/>
+
+http://localhost:3000/
+
 
 <br/>
 
